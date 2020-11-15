@@ -1,6 +1,6 @@
 \documentclass{homework}
 
-\name{Tung Nguyen (03694954) - Patrick Großmann - }
+\name{Tung Nguyen (03694954) - Patrick Großmann - Alexander Fries}
 \term{WiSe20-21}
 \course{Algebra}
 \hwnum{Woche 2}
@@ -72,7 +72,7 @@ $\Phi$ ist deshalb ein Homomorphismus \newline
     Daraus schließen wir, dass xm=mx für beliebiger m in G. x liegt deshalb im Zentrum von G.
     \item $\subseteq$ Richtung: Sei x im Zentrum von G. Dann haben wir $xmx^{-1} = m$ für alle m in G. $i_x$ ist deswegen die Identitätsfunktion. x liegt deshalb im Kern von $\Phi$
 \end{itemize}
-(d) Inn(G) ist eine Untergruppe von Aut(G), da Inn(G) das Bild von einem Homomorphismus auf Aut(G) ist. Sei a ein Automorphisus von G, und $i_g$ ein beliebiges Element in Inn(G) (hinsichtlich das Element g in G). Wir betrachten die Konjugation von i mit a, angewendet auf ein beliebiges Element x in G:
+(d) Inn(G) ist eine Untergruppe von Aut(G), da Inn(G) das Bild von einem Homomorphismus auf Aut(G) ist. Sei a ein Automorphisus von G, und $i_g$ ein beliebiges Element in Inn(G) (hinsichtlich des Elements g in G). Wir betrachten die Konjugation von i mit a, angewendet auf ein beliebiges Element x in G:
 \begin{align*}
     a \circ i_g \circ a^{-1} (x)&= a \circ (ga^{-1} (x)g^{-1}) \\
     &= a(g) (a \circ a^{-1} (x)) a(g^{-1}) \tag*{(Da a ist ein Automorphismus ist)} \\
@@ -89,6 +89,27 @@ $a(g)$ ist ein Element in G.$a(g)x a^{-1}(g)$ ist deshalb das Bild von einem inn
 \begin{solution}
 Da U eine Untegruppe von G, kann man jedes Element von U in der Form $a^{n}$ für einiges n schreiben. Dann gibt es ein kleinste posive naturliche Zahl m, sodaß $a^{m} \in U $ ist. (Wohlordnungsprinzip).
 Nehmen wir an, dass U nicht zyklisch ist. Dann gibt es ein anderes Element in der Form $a^{n}$, wobei n kein Vielfaches von m ist (sonst ist U zyklisch). Da U eine Untegruppe ist, ist das Inverse $a^{-n}$ in U. Das Element $a^{n-m}$ liegt auch in U. Aber n-m < m (Widerspruch!). Deshalb muss U zyklisch sein.
+\end{solution}
+
+\begin{problem}
+    \textbf{Weitere Kriterien für abelsche Gruppen}
+\end{problem}
+
+\begin{solution}
+    (a) Sei g' ein beliebiges Element in G. Da G/Z(G) zyklisch ist, bezeichnen wir gZ die Generatornebenklasse hinsichtlich des Elements g in G. Wir haben:
+    $$
+        g'Z=g^{n}Z
+    $$
+    für einiges n. Daraus haben wir : $g'=g^{n}z$, wobei z ein entsprechendes Kommutator in Z. \\
+    Jetzt betrachten wir das Produkt von 2 beliebige Elemente x und y in G. Aus dem obigen Argument folgt:
+    \begin{align*}
+        xy &= g^{n}zg^{m}z' \\
+           &= g^{n+m}zz'  \tag*{(da z und z' Kommutatoren in G sind)}\\
+           &= g^{m}zg^{n}z' \tag*{(Addition ist kommutativ)} \\
+           &= yx
+    \end{align*}
+    G ist infolgedessen abelsch \\
+    (b) Wenn Aut(G) zyklisch ist, dann ist Inn(G) auch zyklisch, da Inn(G) eine Untegruppe von Aut(G). Von der vorherigen Aufgabe wissen wir, dass $G/Z(G)\cong Inn(G)$. Wenn Inn(G) zyklisch ist, dann ist $G/Z(G)$ auch zysklich. G ist wegen (a) abelsch.
 \end{solution}
 
 \end{document}

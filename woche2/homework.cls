@@ -95,7 +95,6 @@
 \fancypagestyle{runningpage}
 {
   \fancyhf{}
-  \fancyhead[L]{\small\@hwtitle}
   \fancyhead[R]{\small\@name}
   \fancyfoot[C]{\small\thepage}
 }
