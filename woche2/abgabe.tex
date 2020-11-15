@@ -1,0 +1,94 @@
+\documentclass{homework}
+
+\name{Tung Nguyen (03694954) - Patrick Großmann - }
+\term{WiSe20-21}
+\course{Algebra}
+\hwnum{Woche 2}
+
+\begin{document}
+
+\begin{problem}
+    \textbf{Normalteiler}
+\end{problem}
+
+\begin{solution}
+(b) ist die Skalierungsmatrix, deswegen kommutiert sie mit allen anderen Matrixen in G. $U_2$ ist daher eine Normalteiler von G. \newline
+(a) und (c):
+Wir rechnen nach. Sei $g = \begin{pmatrix}
+    x & y \\
+    w & z
+\end{pmatrix}$ eine Matrix in G. \newline
+Die rechten Nebenklassen von $U_1$ haben die Form:
+$$
+    \begin{pmatrix}
+        a & b \\
+        0 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+        x & y \\
+        w & z
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        ax+bw & ay+bz \\
+        w & z
+    \end{pmatrix}
+$$
+Ähnlicherweise haben die Linksnebenklassen von $U_1$ die Form : $\begin{pmatrix}
+    ax & bx+y \\
+    aw & bw+z
+\end{pmatrix}$.
+Die Links und Rechtnebenklassen von $U_1$ haben verschiedene Formen. Folgenddessend ist $U_1$ kein Normalteiler von G.
+Für $U_3$ rechnen wir auf ziemlich die gleiche Weise und schließen wir, dass $U_3$ kein Normalteiler von G ist.
+\end{solution}
+
+\begin{problem}
+    \textbf{Innere Automorphismen}
+\end{problem}
+
+\begin{solution}
+    (a) Wir haben:
+    \begin{align*}
+        i_g(xy) &= gxyg^{-1}  \tag*{(nach Definition)} \\
+               &= gx(gg^{-1})yg^{-1} \\
+               &= (gxg)(g^{-1}yg^{-1}) \\
+               &= i_g(x)i_g(y)
+     \end{align*}
+$i_g$ ist deswegen ein Automorphismus auf G \newline
+(b)
+Für beliebige x und y in G, und m auch in G haben wir:
+\begin{align*}
+    \Phi(xy)(m) &= i_xy(m) \\
+            &= (xy)m(xy)^{-1} \tag*{(nach Definition)} \\
+            &= x(ymy^{-1})x^{-1} \\
+            &= i_xi_y(m)
+\end{align*}
+$\Phi$ ist deshalb ein Homomorphismus \newline
+(c)
+\begin{itemize}
+    \item $\supseteq$ Richtung: Sei x in Kern von $\Phi$. Infolgedessen haben wir $i_x$ als der Identitätsautomorphismus, oder in Formular:\[
+        i_x(m) = xmx^{-1} = m \tag*{(für beliebiger m in G)}
+    \]
+    Daraus schließen wir, dass xm=mx für beliebiger m in G. x liegt deshalb im Zentrum von G.
+    \item $\subseteq$ Richtung: Sei x im Zentrum von G. Dann haben wir $xmx^{-1} = m$ für alle m in G. $i_x$ ist deswegen die Identitätsfunktion. x liegt deshalb im Kern von $\Phi$
+\end{itemize}
+(d) Inn(G) ist eine Untergruppe von Aut(G), da Inn(G) das Bild von einem Homomorphismus auf Aut(G) ist. Sei a ein Automorphisus von G, und $i_g$ ein beliebiges Element in Inn(G) (hinsichtlich das Element g in G). Wir betrachten die Konjugation von i mit a, angewendet auf ein beliebiges Element x in G:
+\begin{align*}
+    a \circ i_g \circ a^{-1} (x)&= a \circ (ga^{-1} (x)g^{-1}) \\
+    &= a(g) (a \circ a^{-1} (x)) a(g^{-1}) \tag*{(Da a ist ein Automorphismus ist)} \\
+    &= a(g)x a^{-1}(g)
+\end{align*}
+$a(g)$ ist ein Element in G.$a(g)x a^{-1}(g)$ ist deshalb das Bild von einem inneren Homomorphismus. Die Konjugation von $i_g$ in Aut(G) liegt wieder in Inn(G). Deshalb ist Inn(G) ein Normalteiler von G
+
+\end{solution}
+
+\begin{problem}
+    \textbf{Untergruppen zyklischer Gruppen sind zyklisch}
+\end{problem}
+
+\begin{solution}
+Da U eine Untegruppe von G, kann man jedes Element von U in der Form $a^{n}$ für einiges n schreiben. Dann gibt es ein kleinste posive naturliche Zahl m, sodaß $a^{m} \in U $ ist. (Wohlordnungsprinzip).
+Nehmen wir an, dass U nicht zyklisch ist. Dann gibt es ein anderes Element in der Form $a^{n}$, wobei n kein Vielfaches von m ist (sonst ist U zyklisch). Da U eine Untegruppe ist, ist das Inverse $a^{-n}$ in U. Das Element $a^{n-m}$ liegt auch in U. Aber n-m < m (Widerspruch!). Deshalb muss U zyklisch sein.
+\end{solution}
+
+\end{document}
